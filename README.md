@@ -21,13 +21,13 @@ class MyElement extends HTMLElement {
 }
 ```
 
-1. カスタム要素の登録
+2. カスタム要素の登録
 
 ```
 customElements.define("my-element", MyElement);
 ```
 
-1. 登録した要素の呼び出し
+3. 登録した要素の呼び出し
 
 ```
 <my-element></my-element>
