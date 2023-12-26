@@ -10,22 +10,28 @@
 
 1. クラスの定義
 
-```class MyElement extends HTMLElement {
- constructor() {
- super();
- }
- connectedCallback() {
- this.textContent = "This is My Element!";
- }
- }
+```
+class MyElement extends HTMLElement {
+  constructor() {
+    super();
+  }
+  connectedCallback() {
+    this.textContent = "This is My Element!";
+  }
+}
 ```
 
 1. カスタム要素の登録
 
-   `customElements.define("my-element", MyElement);`
+```
+customElements.define("my-element", MyElement);
+```
 
 1. 登録した要素の呼び出し
-   `<my-element></my-element>`
+
+```
+<my-element></my-element>
+```
 
 ## 注意点
 
