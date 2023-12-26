@@ -1,0 +1,175 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixin" as *;
+
+.p-thanks {
+  padding-top: 28px;
+  padding-bottom: 48px;
+  position: relative;
+  @include mq(lg) {
+    padding-top: 44px;
+    padding-bottom: 80px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    z-index: -5;
+    bottom: 0;
+
+    background-image: linear-gradient(
+        0deg,
+        transparent 0,
+        transparent calc(100% - 1px),
+        #d9d9d9 calc(100% - 1px),
+        #d9d9d9 100%
+      ),
+      linear-gradient(
+        90deg,
+        transparent 0,
+        transparent calc(100% - 1px),
+        #d9d9d9 calc(100% - 1px),
+        #d9d9d9 100%
+      );
+    background-size: 26px 26px;
+    background-repeat: repeat;
+    background-position: center center;
+    @include mq(lg) {
+      background-size: 32px 32px;
+    }
+  }
+
+  &__inner {
+    width: calc(343 / 375 * 100%);
+    margin-inline: auto;
+
+    @include mq(lg) {
+      width: calc(1000 / 1280 * 100%);
+      margin-inline: auto;
+      max-width: 1000px;
+    }
+  }
+
+  &__title {
+    color: #1ee494;
+    text-align: center;
+    font-size: 5.2rem;
+    font-weight: 700;
+    line-height: calc(60 / 52);
+
+    @include mq(lg) {
+      font-size: 9.6rem;
+      line-height: calc(60 / 60);
+    }
+  }
+
+  &__titleJp {
+    color: #333;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.1em;
+    @include mq(lg) {
+      margin-top: 16px;
+    }
+  }
+
+  &__message {
+    margin-top: 20px;
+    color: #454545;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: calc(28 / 16);
+    letter-spacing: 0.1em;
+    @include mq(lg) {
+      margin-top: 16px;
+      text-align: center;
+    }
+  }
+
+  &__newLine {
+    display: none;
+
+    @include mq(lg) {
+      display: inline;
+    }
+  }
+
+  &__causeContainer {
+    margin-top: 28px;
+    padding-block: 28px;
+    border-radius: 8px;
+    background-color: #9bfad3;
+    @include mq(lg) {
+      margin-top: 32px;
+      padding-block: 40px;
+    }
+  }
+
+  &__causeInner {
+    width: calc(308 / 343 * 100%);
+    margin-inline: auto;
+    @include mq(lg) {
+      width: 567px;
+    }
+  }
+
+  &__causeText {
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: calc(28 / 16);
+    letter-spacing: 0.1em;
+  }
+
+  &__cause {
+    margin-top: 20px;
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: calc(28 / 16);
+    letter-spacing: 0.1em;
+  }
+
+  &__lastMessage {
+    margin-top: 28px;
+    color: #454545;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: calc(28 / 16);
+    letter-spacing: 0.1em;
+    @include mq(lg) {
+      text-align: center;
+    }
+  }
+
+  &__button {
+    margin-top: 16px;
+    display: block;
+    margin-inline: auto;
+    width: 280px;
+    padding-block: 15px;
+    border-radius: 999px;
+    border: #fc8a15 solid 2px;
+    text-align: center;
+    color: #fc8a15;
+    background-color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.1em;
+
+    @include mq(lg) {
+      width: 374px;
+      padding-block: 26px;
+    }
+
+    &:hover {
+      transition: 0.5s;
+      background-color: #fc8a15;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixin" as *;
+
+.l-footer {
+  background-color: #fc8a15;
+
+  &__copyright {
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    padding-top: 22.4px;
+    padding-bottom: 24px;
+  }
+}

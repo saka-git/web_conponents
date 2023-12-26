@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- headタグ -->
+  <head prefix="og: https://ogp.me/ns#">
+    <!-- サイト情報 -->
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>タイトル</title>
+    <meta name="description" content="ディスクリプションを入れてください。" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- OG -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="タイトル" />
+    <meta
+      property="og:description"
+      content="ディスクリプションを入れてください。"
+    />
+    <meta property="og:image" content="url(絶対パス)" />
+    <meta property="og:url" content="サイトurl" />
+    <meta property="og:site_name" content="サイト名" />
+
+    <!-- favicon -->
+    <link rel="icon" href="./assets/images/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="url" />
+
+    <!-- フォント -->
+
+    <!-- スタイル -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body class="js-hamburgerToggle">
+    <div class="body__inner">
+      <!-- header -->
+      <my-header></my-header>
+
+      <!-- main -->
+      <main class="p-main" id="main">
+        <my-element></my-element>
+      </main>
+
+      <!-- footer -->
+      <footer class="l-footer"></footer>
+    </div>
+
+    <!-- jsファイル -->
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>

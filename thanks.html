@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- headタグ -->
+  <head prefix="og: https://ogp.me/ns#">
+    <!-- サイト情報 -->
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>タイトル</title>
+    <meta name="description" content="ディスクリプションを入れてください。" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- OG -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="タイトル" />
+    <meta
+      property="og:description"
+      content="ディスクリプションを入れてください。"
+    />
+    <!-- TODO:絶対パス -->
+    <meta property="og:image" content="url(絶対パス)" />
+    <meta property="og:url" content="サイトurl" />
+    <meta property="og:site_name" content="サイト名" />
+
+    <!-- favicon -->
+    <link rel="icon" href="url" />
+    <link rel="apple-touch-icon" sizes="180x180" href="url" />
+
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Sen:wght@700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- スタイル -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body class="js-hamburgerToggle">
+    <!-- header -->
+    <my-header></my-header>
+    <!-- main -->
+    <main class="l-main" id="main">
+      <section class="p-thanks">
+        <div class="p-thanks__inner">
+          <div class="p-thanks__titles">
+            <h1 class="p-thanks__title">THANK YOU!</h1>
+            <p class="p-thanks__titleJp">ご応募ありがとうございます！</p>
+            <p class="p-thanks__message">
+              この度はお問い合わせいただき、誠にありがとうございます。<br />
+              受付完了メール（自動送信）を送信しましたので、ご確認ください。入力いただいた内容を元に、<br
+                class="p-thanks__newLine"
+              />
+              順次ご案内をお送りさせていただきますので、今しばらくお待ちくださいませ。
+            </p>
+          </div>
+          <div class="p-thanks__causeContainer">
+            <div class="p-thanks__causeInner">
+              <p class="p-thanks__causeText">
+                万が一メールが届いてない場合、以下の原因が考えられます。
+              </p>
+              <p class="p-thanks__cause">
+                ・入力されたメールアドレスに誤りがある可能性があります。<br />
+                ・迷惑メールフォルダに振り分けられている可能性があります。<br />
+                ・ドメイン設定受信を行っている可能性があります。<br />
+                「@xxxxxx.ne.jp」のドメイン受信設定を行ってください。
+              </p>
+            </div>
+          </div>
+          <p class="p-thanks__lastMessage">
+            メールが届かない場合は恐れ入りますが、再度お問い合わせください。
+          </p>
+          <a class="p-thanks__button" href="index.html#entry">再度応募する</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="l-footer">
+      <div class="l-footer__inner">
+        <p class="l-footer__copyright">
+          | プライバシーポリシー | &copy;ここにコピーライトが入ります
+        </p>
+      </div>
+    </footer>
+
+    <!-- jsファイル -->
+    <script src="./assets/js/common.js"></script>
+  </body>
+</html>

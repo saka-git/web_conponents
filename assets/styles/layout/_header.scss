@@ -1,0 +1,318 @@
+@use "../foundation/variables" as *;
+@use "../foundation/mixin" as *;
+
+.l-header {
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  background-color: #fff;
+  &.js-animationHeader {
+    animation-name: fadeInHeader;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+
+  @keyframes fadeInHeader {
+    0% {
+      opacity: 0;
+      top: -100%;
+    }
+    100% {
+      opacity: 1;
+      top: 0%;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    position: relative;
+    height: 72px;
+    align-items: center;
+    background-color: #fff;
+
+    @include mq(lg) {
+      height: 100px;
+    }
+  }
+
+  &__logoLink {
+    display: block;
+    margin-left: calc(13 / 375 * 100%);
+    z-index: 100;
+    @include mq(lg) {
+      margin-left: calc(32 / 1280 * 100%);
+    }
+
+    &:hover {
+      opacity: 0.5;
+      transition: 0.5s;
+    }
+  }
+
+  &__logoImg {
+    width: 167px;
+    height: 68px;
+    @include mq(lg) {
+      width: 229px;
+      height: 68px;
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(200%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: -1;
+
+    @include mq(lg) {
+      display: block;
+      position: static;
+      transform: translateX(0);
+      z-index: auto;
+      height: auto;
+      margin-right: calc(32 / 1280 * 100% - 16px);
+      width: auto;
+      overflow-y: visible;
+      overflow-x: visible;
+    }
+
+    &.js-spMenuActive {
+      position: absolute;
+      transform: translateX(0);
+    }
+  }
+
+  &__navItems {
+    padding-top: 88px;
+    width: calc(343 / 375 * 100%);
+    margin-inline: auto;
+
+    @include mq(lg) {
+      display: flex;
+      padding-block: 0;
+      margin-inline: 0;
+      align-items: center;
+      width: auto;
+    }
+  }
+
+  &__navItem {
+    padding-block: 16px;
+    border-bottom: #c9c9c9 solid 1px;
+    @include mq(lg) {
+      padding-block: 0;
+      border: none;
+      display: flex;
+      align-items: center;
+    }
+
+    &::after {
+      @include mq(lg) {
+        content: "";
+        display: block;
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        background-color: #fc8a15;
+      }
+    }
+
+    &:last-child::after {
+      @include mq(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__navLink {
+    color: #1ee494;
+    font-size: 2rem;
+    font-weight: 700;
+    @include calcLineHeight(20, 16);
+
+    &:hover {
+      opacity: 0.5;
+      transition: 0.5s;
+      @include mq(lg) {
+        opacity: 1;
+        color: #1ee494;
+        transition: 0.5s;
+      }
+    }
+
+    &:hover .l-header__navLink--jp {
+      opacity: 0.5;
+      transition: 0.5s;
+      @include mq(lg) {
+        opacity: 1;
+        color: #1ee494;
+        transition: 0.5s;
+      }
+    }
+
+    @media screen and (min-width: 960px) {
+      display: block;
+      text-align: center;
+      color: #333;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: normal;
+      margin-inline: 12px;
+    }
+
+    @media screen and (min-width: 979px) {
+      margin-inline: 16px;
+    }
+
+    &--jp {
+      margin-left: 20px;
+      color: #333;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 1.6px;
+      &:hover {
+        opacity: 0.5;
+        transition: 0.5s;
+        @include mq(lg) {
+          opacity: 1;
+          color: #1ee494;
+          transition: 0.5s;
+        }
+      }
+      @include mq(lg) {
+        display: block;
+        margin-left: 0;
+        font-size: 1rem;
+        letter-spacing: 0.05em;
+        line-height: 100%;
+        margin-top: 4px;
+        color: #333;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  &__LinkEntry {
+    width: 280px;
+    padding-block: 16px;
+    text-align: center;
+    border-radius: 9999px;
+    display: block;
+    margin-inline: auto;
+    margin-top: 32px;
+    background-color: #fc8a15;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2px;
+    border: #fc8a15 2px solid;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.4s;
+    z-index: 2;
+    @include mq(lg) {
+      display: none;
+    }
+
+    &:hover {
+      transition: 0.5s;
+      color: #fc8a15;
+      background-color: #ffffff;
+    }
+  }
+
+  .l-header__LinkEntry:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+    transition-delay: 0s;
+    transition: opacity 0.8s, transform 0.6s ease-in-out;
+  }
+
+  &__navCopyright {
+    color: #333;
+    font-size: 1.2rem;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    margin-top: 261px;
+    position: relative;
+    margin-bottom: 12px;
+
+    @include mq(lg) {
+      display: none;
+    }
+  }
+
+  &__hamburger {
+    height: 19px;
+    z-index: 100;
+    margin-right: calc(16 / 375 * 100%);
+    @include mq(lg) {
+      display: none;
+    }
+
+    &.js-spMenuActive {
+      width: 32px;
+    }
+  }
+
+  &__hamburgerLine {
+    width: 28px;
+    height: 3px;
+    background-color: #000000;
+    position: relative;
+    display: block;
+    transition: all 0.075s ease;
+    &.js-spMenuActive {
+      margin-inline: auto;
+    }
+
+    &:nth-child(1) {
+      top: 0;
+      &.js-spMenuActive {
+        width: 16.33px;
+        top: 8px;
+        transform: rotate(45deg);
+        transition: all 0.075s ease;
+      }
+    }
+    &:nth-child(2) {
+      top: 0;
+      margin-top: 5px;
+      &.js-spMenuActive {
+        opacity: 0;
+        transition: all 0.075s ease;
+      }
+    }
+    &:nth-child(3) {
+      top: 0;
+      margin-top: 5px;
+      margin-left: auto;
+      &.js-spMenuActive {
+        width: 16.33px;
+        top: -8px;
+        transform: rotate(-45deg);
+        transition: all 0.075s ease;
+      }
+    }
+  }
+}

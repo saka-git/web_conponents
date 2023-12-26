@@ -1,0 +1,44 @@
+@use "../foundation/mixin" as *;
+
+/* ===============================================
+# 全ページ共通のスタイルを記述するファイルです
+=============================================== */
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 71px;
+  @include mq(lg) {
+    scroll-padding-top: 99px;
+  }
+}
+
+body {
+  font-family: "Sen", "Noto Sans JP", sans-serif;
+  &.js-spMenuActive {
+    overflow: hidden;
+
+    @include mq(lg) {
+      overflow: visible;
+    }
+  }
+}
+
+.body__inner {
+  width: 100%;
+  // スマホ版メニューを隠すためのスタイル
+  overflow-x: hidden;
+}
+
+main {
+  padding-top: 72px;
+  @include mq(lg) {
+    padding-top: 100px;
+  }
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  overflow: hidden;
+}
